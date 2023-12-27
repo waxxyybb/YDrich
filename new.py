@@ -62,7 +62,8 @@ if uploaded_file is not None:
                 pass
 
     # file_name = uploaded_file.split( os.sep )[-1]
-    file_name = "结果文件.xlsx"
+    datetime_format_ = "%Y%m%d_%H%M%S"  # 对应的格式字符串
+    file_name = f"结果文件_{datetime.now().strftime( datetime_format_)}.xlsx"
     file_path =  os.path.join( target, file_name) 
     workbook.save( file_path) 
 
